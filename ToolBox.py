@@ -4,6 +4,10 @@ import datetime
 ELOCONST = -1.
 
 
+def nb_tf_op():
+    return len(tf.get_default_graph().get_operations())
+
+
 def kron(i_, j_):
     if j_ == i_:
         return 1.
@@ -60,6 +64,16 @@ def format_name(s):
 
 def date_to_number(s):
     return datetime.date(int(s[6:10]), int(s[3:5]), int(s[0:2])).toordinal()
+
+
+def date_to_number_slash_and_format(s):
+    if len(s) == 8:
+        year = int("20"+s[6:8])
+    else:
+        year = int(s[6:10])
+    month = int(s[3:5])
+    day = int(s[0:2])
+    return datetime.date(year, month, day).toordinal()
 
 
 def gen_date_to_id(s, nb_times, max_time, min_time):
