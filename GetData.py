@@ -26,6 +26,8 @@ class Data:
         for key in features:
             self.datas[key] = []
 
+        self.costs = []
+
         self.tf_shuffled_datas = {}
         self.tf_datas = {}
         self.tf_slices = {}

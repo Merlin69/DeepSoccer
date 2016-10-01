@@ -2,6 +2,7 @@ import tensorflow as tf
 import ToolBox
 import Model as M
 import math
+import Costs
 
 PARAMS = ['metaparam0', 'metaparam1', 'metaparam2', 'bais_ext', 'draw_elo']
 
@@ -27,8 +28,10 @@ class Elostd(M.Model):
 
         self.elomatch = {}
         # Define the model
-        for key, proxy in [('train', self.train_data), ('test', self.test_data)]:
-            elomatch = ToolBox.get_elomatch(proxy['team_h'] - proxy['team_a'], proxy['time'], self.elo)
+
+        for key in self.data.tf_slices:
+            s = self.data.tf_slices[key]
+            elomatch = ToolBox.get_elomatch(s['team_h'] - s['team_a'], s['time'], self.elo)
             elomatch += self.param_['bais_ext']
             self.elomatch[key] = elomatch
             elomatch_win = elomatch - self.param_['draw_elo']
@@ -39,18 +42,18 @@ class Elostd(M.Model):
             self.res[key] = tf.pack([p_win, p_tie, p_los], axis=1)
 
         # Define the costs
-        self.init_cost()
-        for key in ['train', 'test']:
+        regulizer = {}
+        for key in self.data.tf_slices:
+            regulizer_list = []
             cost = ToolBox.get_raw_elo_cost(self.param_['metaparam0'], self.param_['metaparam1'], self.elo, self.data.nb_saisons)
-            self.regulizer[key].append(cost)
+            regulizer_list.append(cost)
 
             cost = ToolBox.get_timediff_elo_cost(self.param_['metaparam2'], self.elo, self.data.nb_saisons)
-            self.regulizer[key].append(cost)
+            regulizer_list.append(cost)
 
-        # Finish the initialization
-        super(Elostd, self).finish_init()
+            regulizer[key] = tf.add_n(regulizer_list)
 
-        self.add_optimizer('train')
+        self.regulizer = Costs.Cost(self, 'reg', costs=regulizer)
 
     def get_elos(self):
         return self.session.run(self.elo)
