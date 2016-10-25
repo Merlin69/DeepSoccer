@@ -1,43 +1,42 @@
-##### ID team, team name ##### 
-1,Ajaccio
-2,Ajaccio GFCO
-3,Angers
-4,Arles
-5,Auxerre
-6,Bastia
-7,Bordeaux
-8,Boulogne
-9,Brest
-10,Caen
-11,Cannes
-12,Chateauroux
-13,Dijon
-14,Evian Thonon Gaillard
-15,Grenoble
-16,Gueugnon
-17,Guingamp
-18,Istres
-19,Le Havre
-20,Le Mans
-21,Lens
-22,Lille
-23,Lorient
-24,Lyon
-25,Marseille
-26,Martigues
-27,Metz
-28,Monaco
-29,Montpellier
-30,Nancy
-31,Nantes
-32,Nice
-33,Paris SG
-34,Reims
-35,Rennes
-36,Sedan
-37,Sochaux
-38,St Etienne
-39,Strasbourg
-40,Toulouse
-41,Troyes
-42,Valenciennes
+1,Ajaccio,AC+Ajaccio
+2,Ajaccio GFCO,Gaz%C3%A9lec+FC+Ajaccio
+3,Angers,Angers+SCO,
+4,Arles,AC+Arles+Avignon
+5,Auxerre,AJ+Auxerre
+6,Bastia,SC+Bastia
+7,Bordeaux,Girondins+de+Bordeaux
+8,Boulogne,US+Boulogne+CO
+9,Brest,Stade+Brestois+29
+10,Caen,SM+Caen
+11,Cannes,AS+Cannes
+12,Chateauroux,Ch%C3%A2teauroux
+13,Dijon,Dijon+FCO
+14,Evian Thonon Gaillard,Evian+TG+FC
+15,Grenoble,GF38
+16,Gueugnon,FC+Gueugnon
+17,Guingamp,EA+Guingamp
+18,Istres,FC+Istres
+19,Le Havre,Havre+AC
+20,Le Mans,Le+Mans+FC
+21,Lens,RC+Lens
+22,Lille,LOSC
+23,Lorient,FC+Lorient
+24,Lyon,Olympique+Lyonnais
+25,Marseille,Olympique+de+Marseille
+26,Martigues,FC+Martigues
+27,Metz,FC+Metz
+28,Monaco,AS+Monaco
+29,Montpellier,Montpellier+H%C3%A9rault+SC
+30,Nancy,AS+Nancy+Lorraine
+31,Nantes,FC+Nantes
+32,Nice,OGC+Nice
+33,Paris SG,Paris+Saint-Germain
+34,Reims,Stade+de+Reims
+35,Rennes,Stade+Rennais+FC
+36,Sedan,CS+Sedan
+37,Sochaux,FC+Sochaux-Montb%C3%A9liard
+38,St Etienne,AS+Saint-Etienne
+39,Strasbourg,RC+Strasbourg+Alsace
+40,Toulouse,Toulouse+FC
+41,Troyes,ESTAC+Troyes
+42,Valenciennes,Valenciennes+FC
